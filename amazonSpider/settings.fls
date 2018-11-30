@@ -1,0 +1,6 @@
+PWD /Users/zjn/Documents/Program/Adhark/contentScraper/amazonSpider/amazonSpider
+INPUT /usr/local/texlive/2017/texmf.cnf
+INPUT /usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/zjn/Documents/Program/Adhark/contentScraper/amazonSpider/amazonSpider/settings.py
+OUTPUT /Users/zjn/Documents/Program/Adhark/contentScraper/amazonSpider/amazonSpider/settings.log

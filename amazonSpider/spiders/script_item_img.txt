@@ -1,0 +1,37 @@
+function wait_for_element(splash, css, maxwait)
+    -- Wait until a selector matches an element
+    -- in the page. Return an error if waited more
+    -- than maxwait seconds.
+    if maxwait == nil then
+        maxwait = 10
+    end
+    return splash:wait_for_resume(string.format([[
+    function main(splash) {
+        var selector = '%s';
+        var maxwait = %s;
+        var end = Date.now() + maxwait*1000;
+        function check() {
+            if(document.querySelector(selector)) {
+                splash.resume('Element found');
+            } else if(Date.now() >= end) {
+                var err = 'Timeout waiting for element';
+                splash.error(err + " " + selector);
+            } else {
+                setTimeout(check, 200);
+            }
+        }
+        check();
+    }
+    ]], css, maxwait))
+end
+
+function main(splash)
+    splash:go(splash.args.url)
+    splash:wait(0.5)
+    wait_for_element(splash, "#centerCol")
+    splash:runjs('var eles = document.querySelectorAll(".a-spacing-small.item.imageThumbnail.a-declarative input"); for (var i = 0; i < eles.length; i++) eles[i].click();')
+    splash:wait(0.5)
+    return {
+        html = splash:html(),
+    }
+end
