@@ -15,10 +15,10 @@ htmlcov/
 
 # Customized
 output/
-.aux
-.fdb_latexmk
-.fls
-.log
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
 .DS_Store
 
 # Windows
