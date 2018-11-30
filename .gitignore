@@ -19,6 +19,7 @@ output/
 .fdb_latexmk
 .fls
 .log
+.DS_Store
 
 # Windows
 Thumbs.db
