@@ -11,7 +11,7 @@
 
 BOT_NAME = 'amazonSpider'
 
-SPIDER_MODULES = ['amazonSpider.spiders']
+# SPIDER_MODULES = ['amazonSpider.spiders']
 NEWSPIDER_MODULE = 'amazonSpider.spiders'
 
 
@@ -23,7 +23,7 @@ NEWSPIDER_MODULE = 'amazonSpider.spiders'
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 2
+CONCURRENT_REQUESTS = 1
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay

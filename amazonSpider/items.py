@@ -13,6 +13,7 @@ class AmazonspiderItem(scrapy.Item):
     # name = scrapy.Field()
     title = scrapy.Field()
     price = scrapy.Field()
+    detail_url = scrapy.Field()
     file_urls = scrapy.Field()
     files = scrapy.Field()
 
