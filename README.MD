@@ -51,14 +51,20 @@ See [this page](https://github.com/alecxe/scrapy-fake-useragent) for further det
 After configuring the enviroment, you are ready to scrape image data from Amazon! The following steps teach you how to run the spider.
 
 Please make sure you are in the root directory.
-1. Configure user setting
-   Edit `user_settings.py` file under the root directory. Your can configure the following settings according to you needs:
-   - `KEY_WORDS`: A list of item key words to scrape.
-   - `MAX_DEPTH`: Max number of list pages to scrape for each key word.
-   - `DETAIL_IMG`: Whether you want to scrape detailed, high-quality images of the items. If set to `False`, the program will only scrape thumbnail of the items in list page (Instead of further scraping the detail page).
-   <span style="color:red">**Note:** Current release of scraper will usually fail in scraping images when `DETAIL_IMG` is set to `True`. Because the scraper is frequently detected by Amazon as bot and blocked. Future release will fix this problem.</span>
-2. Run scraper with `python runSpider.py` command.
-3. When the scraper finishes its work, A file named `Output` will generate under root directory. A json file `Output/result.json` contains the structured information of all scraped items. All scraped images are download to `Output/full`.
+
+### Configure user setting
+Edit `user_settings.py` file under the root directory. Your can configure the following settings according to you needs:
+- `KEY_WORDS`: A list of item key words to scrape.
+- `MAX_DEPTH`: Max number of list pages to scrape for each key word.
+- `DETAIL_IMG`: Whether you want to scrape detailed, high-quality images of the items. If set to `False`, the program will only scrape thumbnail of the items in list page (Instead of further scraping the detail page).
+   
+_**Note:** Current release of scraper will usually fail in scraping images when `DETAIL_IMG` is set to `True`. Because the scraper is frequently detected by Amazon as bot and blocked. Future release will fix this problem._
+
+### Run
+Run scraper with `python runSpider.py` command.
+
+### Output
+When the scraper finishes its work, A file named `Output` will generate under root directory. A json file `Output/result.json` contains the structured information of all scraped items. All scraped images are download to `Output/full`.
 
 
 
