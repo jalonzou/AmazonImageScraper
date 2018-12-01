@@ -50,7 +50,7 @@ See [this page](https://github.com/alecxe/scrapy-fake-useragent) for further det
 ## Usage
 After configuring the enviroment, you are ready to scrape image data from Amazon! The following steps teach you how to run the spider.
 
-Please make sure you are in the root directory.
+**Please make sure you are in the root directory.**
 
 ### Configure user setting
 Edit `user_settings.py` file under the root directory. Your can configure the following settings according to you needs:
@@ -66,7 +66,12 @@ Run scraper with `python runSpider.py` command.
 ### Output
 When the scraper finishes its work, A file named `Output` will generate under root directory. A json file `Output/result.json` contains the structured information of all scraped items. All scraped images are download to `Output/full`.
 
+## Release
+**release v0.1 (11/30/2018 current release)**
 
+This release contains the following feature items:
+- Scrape list pages and detail pages of certain catagory.
+- Fake user agent for anti bot-detection.
 
 
 

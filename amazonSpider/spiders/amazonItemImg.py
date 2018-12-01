@@ -62,11 +62,13 @@ class AmazonitemimgSpider(scrapy.Spider):
         # Go to the next page.
         if self.cur_depth < self.max_depth:
             self.cur_depth += 1
-            url_next = response.css("#pagnNextLink::attr(href)").extract_first()
-            if not url_next.startswith('http'): 
-                url_next = 'https://' + self.allowed_domains[0] + url_next
 
-            yield scrapy.Request(url_next, self.parse_list_pages)
+            url_next = response.css("#pagnNextLink::attr(href)").extract_first()
+            if url_next is not None:
+                if not url_next.startswith('http'): 
+                    url_next = 'https://' + self.allowed_domains[0] + url_next
+
+                yield scrapy.Request(url_next, self.parse_list_pages)
 
 
     def parse(self, response):

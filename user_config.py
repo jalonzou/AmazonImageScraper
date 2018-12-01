@@ -5,4 +5,4 @@ KEY_WORDS = ['iphone', 'toy']
 MAX_DEPTH = 1
 
 # Enter item detail page to scrape detailed images of the item
-DETAIL_IMG = False
+DETAIL_IMG = True
