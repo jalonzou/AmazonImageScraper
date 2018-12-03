@@ -21,6 +21,16 @@ if DETAIL_IMG is None:
 
 settings = get_project_settings()
 
+if ENABLE_PROXY:
+    # Multi-Proxy settings
+    settings['RETRY_TIMES'] = 10
+    settings['RETRY_HTTP_CODES'] = [500, 503, 504, 400, 403, 404, 408]
+    settings['PROXY_LIST'] = 'proxy_list.txt'
+    settings['PROXY_MODE'] = 0
+    settings['DOWNLOADER_MIDDLEWARES']['scrapy.downloadermiddlewares.retry.RetryMiddleware'] = 90
+    settings['DOWNLOADER_MIDDLEWARES']['scrapy_proxies.RandomProxy'] = 100
+    settings['DOWNLOADER_MIDDLEWARES']['scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware'] = 110
+
 # Set output format and filename.
 settings['FEED_FORMAT'] = 'json'
 settings['FEED_URI'] = 'output/result.json'

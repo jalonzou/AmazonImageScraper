@@ -47,6 +47,13 @@ pip install scrapy-fake-useragent
 ```
 See [this page](https://github.com/alecxe/scrapy-fake-useragent) for further details on this library.
 
+### (Optional) Install scrapy-proxies
+As Amazon is good at detecting bots, having multiple proxies do the scraping job can alleviate this issue. To config multi-proxy, install `scrapy-proxies` first:
+```
+pip install scrapy_proxies
+```
+Then prepare your proxy list following the instructions from [here](https://github.com/aivarsk/scrapy-proxies). To enable mutil-proxy, set `ENABLE_PROXY` entry in `user_config.py` file to `True`.
+
 ## Usage
 After configuring the enviroment, you are ready to scrape image data from Amazon! The following steps teach you how to run the spider.
 
@@ -57,6 +64,7 @@ Edit `user_settings.py` file under the root directory. Your can configure the fo
 - `KEY_WORDS`: A list of item key words to scrape.
 - `MAX_DEPTH`: Max number of list pages to scrape for each key word.
 - `DETAIL_IMG`: Whether you want to scrape detailed, high-quality images of the items. If set to `False`, the program will only scrape thumbnail of the items in list page (Instead of further scraping the detail page).
+- `ENABLE_PROXY`: Whether you want to enable multi-proxy. Make sure you have add you proxy information to `proxy_list.txt` file.
    
 _**Note:** Current release of scraper will usually fail in scraping images when `DETAIL_IMG` is set to `True`. Because the scraper is frequently detected by Amazon as bot and blocked. Future release will fix this problem._
 
